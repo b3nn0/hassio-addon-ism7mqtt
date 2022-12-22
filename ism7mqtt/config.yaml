@@ -3,6 +3,7 @@ description: "Addon for direct communication with a Wolf ISM7 module"
 version: "1.0.0"
 slug: "ism7mqtt"
 init: false
+url: https://github.com/b3nn0/hassio-addon-ism7mqtt
 arch:
   - aarch64
   - amd64
