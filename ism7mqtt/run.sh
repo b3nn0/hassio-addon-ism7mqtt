@@ -25,5 +25,6 @@ ISM_ARGS+=" -t /parameter.json "
 
 echo "Starting ism7mqtt $ISM_ARGS"
 
+cd /app
 /app/ism7mqtt $ISM_ARGS
 
