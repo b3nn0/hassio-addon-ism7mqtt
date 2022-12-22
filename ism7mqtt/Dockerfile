@@ -1,4 +1,3 @@
-#FROM $BUILD_FROM
 FROM zivillian/ism7mqtt:ha-discovery
 
 # Default ENV
@@ -20,6 +19,8 @@ COPY run.sh /
 WORKDIR /usr/src
 ARG BUILD_ARCH
 
+# A lot of this is copied from HAs base image, so we can use its fancy features to retrieve options and MQTT credentials.
+# Could probably be done a lot simpler...
 RUN \
     set -x \
     && chmod a+x /run.sh \
