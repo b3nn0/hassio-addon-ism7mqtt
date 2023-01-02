@@ -1,3 +1,3 @@
 ## What’s changed
 
-- Escape + in MQTT Topics
+- Skip NO_DISPLAY/Client_NO_DISPLAY parameters for discovery
