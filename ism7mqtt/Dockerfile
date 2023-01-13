@@ -1,4 +1,4 @@
-FROM zivillian/ism7mqtt:ha-discovery
+FROM zivillian/ism7mqtt:v0.0.10
 
 # Default ENV
 ENV \

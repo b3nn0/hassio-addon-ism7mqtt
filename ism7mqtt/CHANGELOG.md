@@ -2,6 +2,7 @@
 
 !!! STOP !!!
 
+If you used this add-on before, while it was in beta testing, read below!
 This version contains a major rework of the entity IDs provided by this Addon.
 
 To make everything work seemlessly with HA, I recommend you to
@@ -14,4 +15,15 @@ If you have other stuff using HA discovery, you might only want to delete topics
 5. Start this Add-on
 
 As the IDs have changed, you might have to re-add whatever you need to the dashboard(s).
-  
+
+
+## Real changes
+
+- rework mqtt topic tree and json structure by @zivillian in #32
+- add SSL proxy for older modules (with firmware < 200) by @zivillian in #38
+- process ServiceReadNumber (support CWL) by @zivillian in #40
+- Home Assistant discovery by @b3nn0 in #35
+
+## Breaking Change
+
+There are multiple changes to the MQTT topic structure and json payload. Please check your integrations for changed parameter names.
