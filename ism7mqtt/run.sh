@@ -22,8 +22,11 @@ if [[ "$DEBUG_LOGGING" == "true" ]]; then
     ISM_ARGS+=" -d"
 fi
 
-echo "Starting ism7mqtt $ISM_ARGS"
-
 cd /app
-/app/ism7mqtt $ISM_ARGS
 
+while [ true ]; do                
+    echo "Starting ism7mqtt $ISM_ARGS"
+    /app/ism7mqtt $ISM_ARGS
+    echo "ism7mqtt unexpectedly quit with return code $?"
+    sleep 10
+done
