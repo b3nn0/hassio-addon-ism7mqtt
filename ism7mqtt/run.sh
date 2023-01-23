@@ -24,9 +24,9 @@ fi
 
 cd /app
 
-while [ true ]; do                
+while [ true ]; do
     echo "Starting ism7mqtt $ISM_ARGS"
-    /app/ism7mqtt $ISM_ARGS
-    echo "ism7mqtt unexpectedly quit with return code $?"
+    /app/ism7mqtt $ISM_ARGS || echo "ism7mqtt unexpectedly quit with return code $?"
     sleep 10
 done
+
