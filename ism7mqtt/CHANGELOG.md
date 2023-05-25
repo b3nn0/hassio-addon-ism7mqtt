@@ -1,9 +1,10 @@
-Bump ism7mqtt to 0.0.11
+Bump ism7mqtt to v0.0.12
 
-## What’s changed
+## What's Changed
 
-- escape + and # in MQTT topics (#39)
-- fix UINT32 converter (#42)
-- add decrypt app for smartset.log file created by mobile app by @zivillian in #46
-- update to bc 2.1.0 by @zivillian in #47
-- add write support for BM2Time & BM2Date by @zivillian in #49 and #50
+- added German translation for add-on configuration
+- fix output of BinaryReadOnlyConverterTemplate, MicerStateConverterTemplate and corresponding ha discovery topics by @zivillian in #60
+
+## Breaking Change
+- Boolean parameters are no longer as true/false but instead as 0/1 and the corresponding text value
+- Mixer state value is no longer reported as -/closed/opened, but as 0/1/2 and the corresponding text value
