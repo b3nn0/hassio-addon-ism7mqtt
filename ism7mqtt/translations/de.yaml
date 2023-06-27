@@ -6,9 +6,6 @@ configuration:
   device_name:
     name: ISM7 Gerätename
     description: Ein eindeutiger Name der dein Wolf-Gerät identifiziert. Wird genutzt um eindeutige Entitynamen zu generieren.
-  parameter_json:
-    name: Parameter.json Dateiinhalt
-    description: Kopiere den Inhalt deiner parameter.json Datei hier hin.
   interval:
     name: Update Intervall (Sekunden)
   debug_logging:

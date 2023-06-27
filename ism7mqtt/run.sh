@@ -9,20 +9,32 @@ export ISM7_MQTTPASSWORD=$(bashio::services mqtt "password")
 export ISM7_IP=$(bashio::config 'ism7_ip')
 export ISM7_PASSWORD=$(bashio::config 'ism7_password')
 export HA_DISCOVERY_ID=$(bashio::config 'device_name')
-export PARAMETER_JSON=$(bashio::config 'parameter_json')
 export INTERVAL=$(bashio::config 'interval')
 export DEBUG_LOGGING=$(bashio::config 'debug_logging')
-
+export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
 
 set -x
-echo $PARAMETER_JSON > /parameter.json
 
-ISM_ARGS="--hass-id=$HA_DISCOVERY_ID --interval=$INTERVAL -t /parameter.json"
+cd /app
+
+parameters="/config/ism7-parameters-$HA_DISCOVERY_ID.json"
+
+if ! [ -f $parameters ]; then
+    echo "Creating initial configuration $parameters"
+    /app/ism7config -t $parameters
+    if ! [ -f $parameters ]; then
+        echo "Parameter file creation seems to have failed. Please report to the ISM7MQTT Author"
+        exit -1
+    fi
+fi
+
+
+
+
+ISM_ARGS="--hass-id=$HA_DISCOVERY_ID --interval=$INTERVAL -t $parameters"
 if [[ "$DEBUG_LOGGING" == "true" ]]; then
     ISM_ARGS+=" -d"
 fi
-
-cd /app
 
 while [ true ]; do
     echo "Starting ism7mqtt $ISM_ARGS"
