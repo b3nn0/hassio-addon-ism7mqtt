@@ -11,7 +11,6 @@ export ISM7_PASSWORD=$(bashio::config 'ism7_password')
 export HA_DISCOVERY_ID=$(bashio::config 'device_name')
 export INTERVAL=$(bashio::config 'interval')
 export DEBUG_LOGGING=$(bashio::config 'debug_logging')
-export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
 
 set -x
 
@@ -23,7 +22,7 @@ if ! [ -f $parameters ]; then
     echo "Creating initial configuration $parameters"
     /app/ism7config -t $parameters
     if ! [ -f $parameters ]; then
-        echo "Parameter file creation seems to have failed. Please report to the ISM7MQTT Author"
+        echo "Parameter file creation seems to have failed. Please report the ism7mqtt project: https://github.com/zivillian/ism7mqtt/issues/new"
         exit -1
     fi
 fi
