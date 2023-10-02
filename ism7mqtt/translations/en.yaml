@@ -5,7 +5,7 @@ configuration:
     name: ISM7 Password
   device_name:
     name: ISM7 Device Name
-    description: Any unique name to identify your Wolf device. Will be used to generate unique entity names.
+    description: Any unique name to identify your Wolf device. Will be used to generate unique entity names. May not contain spaces, special characters, ...
   interval:
     name: Update interval (seconds)
   debug_logging:
