@@ -14,8 +14,4 @@ configuration:
     name: Additional ISM7 devices
     description: >-
       If you have multiple ISM7 Devices, specify them here to start ism7mqtt multiple times.
-      To do so, add multiple blocks like this:
-      - device_name: "WolfHeater2"
-        ism7_ip: 192.168.x.x
-        ism7_password: xxxx
-        interval: 60
+      See here for how to configure them: https://github.com/b3nn0/hassio-addon-ism7mqtt/blob/main/README.md

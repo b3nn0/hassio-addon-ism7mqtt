@@ -14,10 +14,6 @@ configuration:
     name: Weitere ISM7 Geräte
     description: >-
       Wenn weitere ISM7 Geräte vorhanden sind, können diese hier speizifiziert werden um mehrere ism7mqtt Instanzen zu starten.
-      Dazu mehrere Blöcke dieser Art angeben:
-      - device_name: "WolfHeizung2"
-        ism7_ip: 192.168.x.x
-        ism7_password: xxxx
-        interval: 60
+      Wie diese genau konfiguriert werden müssen ist hier beschrieben: https://github.com/b3nn0/hassio-addon-ism7mqtt/blob/main/README.md
 
 
