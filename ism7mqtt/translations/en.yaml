@@ -10,4 +10,12 @@ configuration:
     name: Update interval (seconds)
   debug_logging:
     name: Debug logging
-
+  additional_devices:
+    name: Additional ISM7 devices
+    description: >-
+      If you have multiple ISM7 Devices, specify them here to start ism7mqtt multiple times.
+      To do so, add multiple blocks like this:
+      - device_name: "WolfHeater2"
+        ism7_ip: 192.168.x.x
+        ism7_password: xxxx
+        interval: 60

@@ -1,6 +1,6 @@
 name: "Ism7MQTT"
 description: "Addon for direct communication with a Wolf ISM7 module"
-version: "v0.0.14"
+version: "v0.0.14-1"
 slug: "ism7mqtt"
 init: false
 url: https://github.com/b3nn0/hassio-addon-ism7mqtt
@@ -23,14 +23,24 @@ options:
   #ism7_password: ""
   device_name: Wolf
   interval: 60
+  additional_devices: []
   debug_logging: False
+
   
 
 schema:
+  device_name: str
   ism7_ip: str
   ism7_password: password
-  device_name: str
   interval: int
   debug_logging: bool
+
+  additional_devices:
+    - device_name: str
+      ism7_ip: str
+      ism7_password: password
+      interval: "int?"
+
+  
   
   
