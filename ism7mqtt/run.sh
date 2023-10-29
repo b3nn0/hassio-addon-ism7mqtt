@@ -20,7 +20,7 @@ function start_ism7mqtt() {
 
     cd /app
 
-    parameters="/config/ism7-parameters-$HA_DISCOVERY_ID.json"
+    parameters="/config/ism7-parameters-$ISM7_HOMEASSISTANT_ID.json"
     if ! [ -f $parameters ]; then
         echo "Creating initial configuration $parameters"
         /app/ism7config -t $parameters
