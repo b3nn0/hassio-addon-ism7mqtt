@@ -2,7 +2,7 @@
 
 This Repository contains a Home Assistant Addon to run Ism7MQTT for reading data from Wolf heaters, equipped with an ISM7 Module, directly.
 
-Also supports running multiple instances of ism7mqtt. To do so, configure the first instance normally, then, for each ISM7 you have, specify a block like this under "additional ISM7 devices":
+Also supports running multiple instances of ism7mqtt. To do so, configure the first instance normally, then, for each additional ISM7 you have, specify a block like this under "additional ISM7 devices":
 ```
 - device_name: "WolfHeizung2
   ism7_ip: "192.168.x.y"
