@@ -2,10 +2,22 @@
 
 export CONFIG_PATH=/data/options.json
 
-export ISM7_MQTTHOST=$(bashio::services mqtt "host")
-export ISM7_MQTTUSERNAME=$(bashio::services mqtt "username")
-export ISM7_MQTTPASSWORD=$(bashio::services mqtt "password")
 export DEBUG_LOGGING=$(bashio::config 'debug_logging')
+
+
+export ISM7_MQTTHOST="$(bashio::config 'mqtt_host')"
+export ISM7_MQTTUSERNAME="$(bashio::config 'mqtt_user')"
+export ISM7_MQTTPASSWORD="$(bashio::config 'mqtt_password')"
+
+if [[ "$ISM7_MQTTHOST" == "null" ]]; then
+    export ISM7_MQTTHOST="$(bashio::services mqtt 'host')"
+    export ISM7_MQTTUSERNAME="$(bashio::services mqtt 'username')"
+    export ISM7_MQTTPASSWORD="$(bashio::services mqtt 'password')"
+    echo "Reading config from MQTT broker add-on: $ISM7_MQTTHOST/$ISM7_MQTTUSERNAME"
+else
+    echo "Using config from add-on configuration: $ISM7_MQTTHOST/$ISM7_MQTTUSERNAME"
+fi
+
 
 
 function start_ism7mqtt() {

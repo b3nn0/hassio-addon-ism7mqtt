@@ -1,4 +1,5 @@
 ## What's Changed
+- Allow configuration of an external MQTT broker
 - Allow multiple instances of ism7mqtt to run.
 Exmaple config for additional devices:
 ```
