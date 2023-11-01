@@ -18,6 +18,9 @@ configuration:
   mqtt_host:
     name: "Externer MQTT Broker Adresse"
     description: "Nur nötig wenn der Broker nicht als Home Assistant Addon läuft"
+  mqtt_port:
+    name: "Externer MQTT Broker Port"
+    description: "Nur nötig wenn der Broker nicht als Home Assistant Addon läuft"
   mqtt_user:
     name: "Externer MQTT Broker Benutzer"
     description: "Nur nötig wenn der Broker nicht als Home Assistant Addon läuft"

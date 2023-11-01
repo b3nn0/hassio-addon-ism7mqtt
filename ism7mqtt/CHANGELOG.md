@@ -1,6 +1,7 @@
 ## What's Changed
+- Bump ism7mqtt to v0.0.15
 - Allow configuration of an external MQTT broker
-- Allow multiple instances of ism7mqtt to run.
+- Allow multiple instances of ism7mqtt to run
 Exmaple config for additional devices:
 ```
 - device_name: "WolfHeizung2"
