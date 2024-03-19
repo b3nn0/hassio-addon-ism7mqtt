@@ -15,9 +15,21 @@ Note that each ISM7 needs a distinct device name without spaces or special chara
 For more information, or if you encounter any issues, please refer to https://github.com/zivillian/ism7mqtt
 
 
+
 # Beginner guide
 1. Go to Settings -> Add Ons and install "Mosquitto broker" and Start it
 2. Go to Settings -> Integrations and install "MQTT" It will ask you if it should use the local "Mosquitto broker" Add-On - click Yes
 3. Go to Settings -> Add Ons "Add On Store" (bottom right) -> Repository (Top Right) -> Add "https://github.com/b3nn0/hassio-addon-ism7mqtt" Repository
 4. Add the "Ism7MQTT" Add-On and Configure it for your WOLFLINK (Name, IP, Password) -> Open the Add-On -> TAB "Configure"
 5. start the Add-On "Ism7MQTT", it will configure all Entities for your WOLF. If something goes wrong, check the log/protocol tab of the Add-on.
+
+
+# Important, if some entities are unavailable
+The ISM7 Module is easily overwhelmed when monitoring hundreds of parameters. The only solution seems to be to manually disable a bunch of them that you don't need.
+To do so, click on parameters you don't need and note their device and parameter ID:
+![image](https://github.com/zivillian/ism7mqtt/assets/1858945/c9c685d7-cdcd-40cd-a906-1d7eb61a8a7e)
+
+Then use a text editor addon to modify the "config/ism7-parameters-Wolf.json" (or similar, depending on the device name) and remove either a complete device section, or individual parameters.
+These parameters will then not be queried any more, so more important updates work correctly.
+(Starting with the next version, these parameters will also be removed from HA automatically. Just ignore them for now).
+
