@@ -1,4 +1,4 @@
-FROM zivillian/ism7mqtt:v0.0.15
+FROM zivillian/ism7mqtt:v0.0.16
 
 # Default ENV
 ENV \
@@ -33,6 +33,8 @@ RUN \
         tzdata \
         xz \
         icu-libs \
+        moreutils \
+        mosquitto-clients \
     && if [ "${BUILD_ARCH}" = "armv7" ]; then \
             export S6_ARCH="arm"; \
         elif [ "${BUILD_ARCH}" = "i386" ]; then \

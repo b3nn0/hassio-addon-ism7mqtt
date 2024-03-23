@@ -28,7 +28,13 @@ function start_ism7mqtt() {
     export ISM7_IP=$2
     export ISM7_PASSWORD=$3
     export ISM7_INTERVAL=$4
-    
+
+    echo "Removing legacy retained topics for $ISM7_HOMEASSISTANT_ID ..."
+    mosquitto_sub -h "$ISM7_MQTTHOST" -p "$ISM7_MQTTPORT" --username "$ISM7_MQTTUSERNAME" --pw "$ISM7_MQTTPASSWORD" --retained-only -t 'homeassistant/#'  -W 1 -v 2>/dev/null | grep "/${ISM7_HOMEASSISTANT_ID}_.* {" | cut -f1 -d' {' | while read line; do
+      echo "Removing $line" | ts
+      mosquitto_pub -h "$ISM7_MQTTHOST" -p "$ISM7_MQTTPORT" --username "$ISM7_MQTTUSERNAME" --pw "$ISM7_MQTTPASSWORD" -t "${line}" -r -n
+    done || true
+
     if [ $ISM7_INTERVAL = "" ]; then
         export ISM7_INTERVAL=60
     fi
@@ -38,7 +44,7 @@ function start_ism7mqtt() {
     parameters="/config/ism7-parameters-$ISM7_HOMEASSISTANT_ID.json"
     if ! [ -f $parameters ]; then
         echo "Creating initial configuration $parameters"
-        /app/ism7config -t $parameters
+        /app/ism7config -t $parameters | ts
         if ! [ -f $parameters ]; then
             echo "Parameter file creation seems to have failed. Please report to the ism7mqtt project: https://github.com/zivillian/ism7mqtt/issues/new"
             exit -1
@@ -53,7 +59,7 @@ function start_ism7mqtt() {
 
     while [ true ]; do
         echo "Starting ism7mqtt $ISM_ARGS"
-        /app/ism7mqtt $ISM_ARGS || echo "ism7mqtt unexpectedly quit with return code $?"
+        /app/ism7mqtt $ISM_ARGS | ts || echo "ism7mqtt unexpectedly quit with return code $?"
         sleep 10
     done
 

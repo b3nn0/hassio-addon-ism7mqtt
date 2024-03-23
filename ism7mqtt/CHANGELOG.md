@@ -1,11 +1,8 @@
+Bumped ism7mqtt to v0.0.16
+
 ## What's Changed
-- Bump ism7mqtt to v0.0.15
-- Allow configuration of an external MQTT broker
-- Allow multiple instances of ism7mqtt to run
-Exmaple config for additional devices:
-```
-- device_name: "WolfHeizung2"
-  ism7_ip: 192.168.x.x
-  ism7_password: xxxx
-  interval: 60
-```
+- HA Discovery: Don't retain discovery topics by @b3nn0 in #94
+### Bugfixes
+- support hostname #100
+- support json output in docker image #101
+- fix json write for duplicate parameter #102
