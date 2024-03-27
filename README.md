@@ -25,7 +25,12 @@ For more information, or if you encounter any issues, please refer to https://gi
 
 
 # Important, if some entities are unavailable
-The ISM7 Module is easily overwhelmed when monitoring hundreds of parameters. The only solution seems to be to manually disable a bunch of them that you don't need.
+The ISM7 Module is easily overwhelmed when monitoring hundreds of parameters. This can result in temporary connection drops, or some parameters bein unavailable/not being updated.
+
+Possible solutions have been found:
+- Reduce load on the microcontroller by disabling the connection to the Wolf portal
+- Manually disable a bunch of parameters you don't need anyway.
+
 To do so, click on parameters you don't need and note their device and parameter ID:
 ![image](https://github.com/zivillian/ism7mqtt/assets/1858945/c9c685d7-cdcd-40cd-a906-1d7eb61a8a7e)
 
