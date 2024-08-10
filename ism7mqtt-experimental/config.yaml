@@ -1,0 +1,52 @@
+name: "Ism7MQTT Experimental"
+description: "EXPERIMENTAL Addon for direct communication with a Wolf ISM7 module"
+version: "master"
+slug: "ism7mqtt-experimental"
+init: false
+url: https://github.com/b3nn0/hassio-addon-ism7mqtt
+arch:
+  - aarch64
+  - amd64
+  - armv7
+  #- armhf
+  #- i386
+map:
+  - "config:rw"
+discovery:
+  - mqtt
+services:
+  - "mqtt:need"
+
+
+options:
+  #ism7_ip: ""
+  #ism7_password: ""
+  device_name: Wolf
+  interval: 60
+  additional_devices: []
+  debug_logging: False
+  mqtt_port: 1883
+
+  
+
+schema:
+  device_name: str
+  ism7_ip: str
+  ism7_password: password
+  interval: int
+  mqtt_host: "str?"
+  mqtt_port: "int?"
+  mqtt_user: "str?"
+  mqtt_password: "password?"
+
+  debug_logging: bool
+
+  additional_devices:
+    - device_name: str
+      ism7_ip: str
+      ism7_password: password
+      interval: "int?"
+
+  
+  
+  

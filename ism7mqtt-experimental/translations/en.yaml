@@ -1,0 +1,29 @@
+configuration:
+  ism7_ip:
+    name: ISM7 IP Address
+  ism7_password:
+    name: ISM7 Password
+  device_name:
+    name: ISM7 Device Name
+    description: Any unique name to identify your Wolf device. Will be used to generate unique entity names. May not contain spaces, special characters, ...
+  interval:
+    name: Update interval (seconds)
+  debug_logging:
+    name: Debug logging
+  additional_devices:
+    name: Additional ISM7 devices
+    description: >-
+      If you have multiple ISM7 Devices, specify them here to start ism7mqtt multiple times.
+      See here for how to configure them: https://github.com/b3nn0/hassio-addon-ism7mqtt/blob/main/README.md
+  mqtt_host:
+    name: "External MQTT broker address"
+    description: "Only needed if the broker isn't running as a Home Assistant Addon"
+  mqtt_port:
+    name: "External MQTT broker port"
+    description: "Only needed if the broker isn't running as a Home Assistant Addon"
+  mqtt_user:
+    name: "External MQTT broker user"
+    description: "Only needed if the broker isn't running as a Home Assistant Addon"
+  mqtt_password:
+    name: "External MQTT broker password"
+    description: "Only needed if the broker isn't running as a Home Assistant Addon"
