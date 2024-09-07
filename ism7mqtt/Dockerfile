@@ -1,4 +1,4 @@
-FROM zivillian/ism7mqtt:v0.0.16
+FROM zivillian/ism7mqtt:v0.0.17
 
 # Default ENV
 ENV \
