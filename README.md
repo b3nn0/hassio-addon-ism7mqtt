@@ -29,6 +29,7 @@ The ISM7 Module is easily overwhelmed when monitoring hundreds of parameters. Th
 
 Possible solutions have been found:
 - Reduce load on the microcontroller by disabling the connection to the Wolf portal
+- Connect via ethernet cable instead of Wifi. The Wifi connection is reported to be very unreliable
 - Manually disable a bunch of parameters you don't need anyway
 
 To do so, click on parameters you don't need and note their device and parameter ID:
