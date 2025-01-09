@@ -6,6 +6,9 @@ configuration:
   device_name:
     name: ISM7 Device Name
     description: Any unique name to identify your Wolf device. Will be used to generate unique entity names. May not contain spaces, special characters, ...
+  language:
+    name: Language
+    description: Language in which sensors should be named
   interval:
     name: Update interval (seconds)
   debug_logging:

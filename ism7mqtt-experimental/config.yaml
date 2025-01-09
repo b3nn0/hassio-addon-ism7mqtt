@@ -22,6 +22,7 @@ options:
   #ism7_ip: ""
   #ism7_password: ""
   device_name: Wolf
+  language: "DEU: German"
   interval: 60
   additional_devices: []
   debug_logging: False
@@ -33,6 +34,7 @@ schema:
   device_name: str
   ism7_ip: str
   ism7_password: password
+  language: "list(DEU: German|CHN: Chinese simplified|GRC: Greek|EST: Estonian|HRV: Croatian|LVA: Latvian|LTU: Lithuanian|ROU: Romanian|ITA: Italian|ESP: Spanish|FRA: French|POL: Polish|CZE: Czech|SVK: Slovak|RUS: Russian|DNK: Danish|HUN: Hungarian|GBR: English|TUR: Turkish|NLD: Dutch|BUL: Bulgarian|POR: Portuguese)"
   interval: int
   mqtt_host: "str?"
   mqtt_port: "int?"
