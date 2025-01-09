@@ -1,6 +1,6 @@
 name: "Ism7MQTT Experimental"
 description: "EXPERIMENTAL Addon for direct communication with a Wolf ISM7 module"
-version: "master"
+version: "master-2025-01-09"
 slug: "ism7mqtt-experimental"
 init: false
 url: https://github.com/b3nn0/hassio-addon-ism7mqtt
