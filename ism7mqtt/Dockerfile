@@ -1,6 +1,6 @@
 ARG BUILD_FROM
 
-FROM zivillian/ism7mqtt:v0.0.18 AS ism
+FROM zivillian/ism7mqtt:v0.0.19 AS ism
 
 FROM $BUILD_FROM
 
