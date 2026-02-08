@@ -1,6 +1,6 @@
 
 # Changes to this addon
-- Bump ism7mqtt to v0.0.18
+- Bump ism7mqtt to v0.0.19
 - Add language selector
 
 # Upstream changes to ism7mqtt
