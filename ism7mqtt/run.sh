@@ -29,7 +29,7 @@ function start_ism7mqtt() {
     export ISM7_PASSWORD=$3
     export ISM7_INTERVAL=$4
 
-    echo "Removing legacy retained topics for $ISM7_HOMEASSISTANT_ID ..."
+    echo "Removing legacy retained topics for $ISM7_HOMEASSISTANT_ID ..." | ts
     mosquitto_sub -h "$ISM7_MQTTHOST" -p "$ISM7_MQTTPORT" --username "$ISM7_MQTTUSERNAME" --pw "$ISM7_MQTTPASSWORD" --retained-only -t 'homeassistant/#'  -W 1 -v 2>/dev/null | grep "/${ISM7_HOMEASSISTANT_ID}_.* {" | cut -f1 -d' {' | while read line; do
       echo "Removing $line" | ts
       mosquitto_pub -h "$ISM7_MQTTHOST" -p "$ISM7_MQTTPORT" --username "$ISM7_MQTTUSERNAME" --pw "$ISM7_MQTTPASSWORD" -t "${line}" -r -n
@@ -69,8 +69,8 @@ function start_ism7mqtt() {
     fi
 
     while [ true ]; do
-        echo "Starting ism7mqtt $ISM_ARGS"
-        /app/ism7mqtt $ISM_ARGS | ts || echo "ism7mqtt unexpectedly quit with return code $?"
+        echo "Starting ism7mqtt $ISM_ARGS" | ts
+        /app/ism7mqtt $ISM_ARGS 2>&1 | ts || echo "ism7mqtt unexpectedly quit with return code $?"
         sleep 10
     done
 
@@ -80,6 +80,9 @@ HA_DISCOVERY_ID=$(bashio::config 'device_name')
 ISM7_IP=$(bashio::config 'ism7_ip')
 ISM7_PASSWORD=$(bashio::config 'ism7_password')
 INTERVAL=$(bashio::config 'interval')
+
+lang=$(bashio::config 'language')
+export ISM7_LANGUAGE="$(cut -d':' -f1 <<<"$lang")"
 
 echo "Setting up ism7mqtt $HA_DISCOVERY_ID $ISM7_IP"
 start_ism7mqtt $HA_DISCOVERY_ID $ISM7_IP $ISM7_PASSWORD $INTERVAL &
