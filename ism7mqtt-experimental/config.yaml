@@ -7,7 +7,7 @@ url: https://github.com/b3nn0/hassio-addon-ism7mqtt
 arch:
   - aarch64
   - amd64
-  - armv7
+  #- armv7
   #- armhf
   #- i386
 map:
