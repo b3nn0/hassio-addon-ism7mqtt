@@ -1,7 +1,7 @@
 name: "Ism7MQTT"
 description: "Legacy Ism7MQTT Addon for very old ISM devices"
 version: "v0.0.19"
-slug: "ism7mqtt"
+slug: "ism7mqtt-legacy"
 init: false
 url: https://github.com/b3nn0/hassio-addon-ism7mqtt
 arch:
