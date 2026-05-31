@@ -1,4 +1,4 @@
-name: "Ism7MQTT"
+name: "Ism7MQTT Legacy"
 description: "Legacy Ism7MQTT Addon for very old ISM devices"
 version: "v0.0.19"
 slug: "ism7mqtt-legacy"
