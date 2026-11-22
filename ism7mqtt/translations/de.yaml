@@ -30,5 +30,8 @@ configuration:
   mqtt_password:
     name: "Externer MQTT Broker Passwort"
     description: "Nur nötig wenn der Broker nicht als Home Assistant Addon läuft"
+  serialize_push_subscribes:
+    name: "Push Subscribes serialisieren"
+    description: "Alternative Kommunikationsmethode mit dem ISM Modul. Kann helfen falls Stabilitätsprobleme auftreten, insbesondere mit Firmware 5.20"
 
 

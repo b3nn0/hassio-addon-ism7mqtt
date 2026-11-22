@@ -9,6 +9,7 @@ export ISM7_MQTTHOST="$(bashio::config 'mqtt_host')"
 export ISM7_MQTTPORT="$(bashio::config 'mqtt_port')"
 export ISM7_MQTTUSERNAME="$(bashio::config 'mqtt_user')"
 export ISM7_MQTTPASSWORD="$(bashio::config 'mqtt_password')"
+export ISM7_SERIALIZE_PUSH_SUBSCRIBES="$(bashio::config 'serialize_push_subscribes')"
 
 
 if [[ "$ISM7_MQTTHOST" == "null" ]]; then

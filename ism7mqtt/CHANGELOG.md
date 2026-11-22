@@ -1,6 +1,6 @@
-
 # Changes to this addon
-- Bump ism7mqtt to v0.0.22
+- Bump ism7mqtt to v0.0.23
+- Config option to serialize push subscribes
 
 # Upstream changes to ism7mqtt
-- see https://github.com/zivillian/ism7mqtt/releases/tag/v0.0.22
+- see https://github.com/zivillian/ism7mqtt/releases/tag/v0.0.23

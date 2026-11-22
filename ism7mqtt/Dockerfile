@@ -1,6 +1,6 @@
 ARG BUILD_FROM=ghcr.io/home-assistant/base:latest
 
-FROM zivillian/ism7mqtt:v0.0.22 AS ism
+FROM zivillian/ism7mqtt:v0.0.23 AS ism
 
 FROM $BUILD_FROM
 

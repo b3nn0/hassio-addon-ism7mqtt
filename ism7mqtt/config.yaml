@@ -1,6 +1,6 @@
 name: "Ism7MQTT"
 description: "Addon for direct communication with a Wolf ISM7 module"
-version: "v0.0.22"
+version: "v0.0.23"
 slug: "ism7mqtt"
 init: false
 url: https://github.com/b3nn0/hassio-addon-ism7mqtt
@@ -27,7 +27,7 @@ options:
   additional_devices: []
   debug_logging: False
   mqtt_port: 1883
-
+  serialize_push_subscribes: False
   
 
 schema:
@@ -42,6 +42,7 @@ schema:
   mqtt_password: "password?"
 
   debug_logging: bool
+  serialize_push_subscribes: bool
 
   additional_devices:
     - device_name: str
